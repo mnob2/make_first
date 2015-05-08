@@ -1,0 +1,32 @@
+
+1. git 계정 등록                    : 계정명mnob2 / email miniobva@hotmail.com / pw 초보..#
+2. git page에서 new repository 생성 : make_first 
+3. 로컬에 저장소 생성               : mkdir myproject
+4. git 사용을 위한 준비             : git init   ( .git/ 폴더가 생성됨 )
+5. 로컬작업공간과 원격저장소 연결   : git remote add origin https://github.com/mnob2/make_first.git 
+6. vi나 touch로 파일 생성 후 등록   : touch Readme.txt
+                                      git add Readme.txt
+                                      git commit Readme.txt -m 'add file'
+7. 원격저장소로 파일 전송           : git push origin master
+
+
+==============
+
+위와 같이 로컬에서 파일을 원격저장소로 생성한 후에 다른 로컬저장소(폴더로 테스트)에서 clone 하는법
+1. 신규 clone용 폴더 생성          : mkdir a
+2. 신규 폴더에 git 사용 셋팅       : cd a
+                                     git init  (여기까지 똑같다)
+3. 원격 저장소 clone               : git clone http://github.com/mnob2/make_first.git
+                                     (이렇게만 하면 된다 자동으로 Readme.txt 파일이 내려온다)
+
+==============
+
+위와 같이 원격 저장소의 마스터의 브랜치를 생성하고 싶을때
+1. 로컬에서 브랜치를 생성한다     : git checkout -b v0.0.1 master
+                                                   [브랜치명]
+2. git push 를 실행한다           : git push origin v0.0.1
+3. github 사이트에서 확인         : 리포지토리 하단에 마스터와 v0.0.1 두개가 생긴다
+4. 로컬브렌치와 원격 브랜치를 연결 : git branch -set--upstream v0.0.1 origin/v0.0.1
+
+
+===============
